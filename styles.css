@@ -1,0 +1,113 @@
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code, 
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+	background-position: bottom;
+	background: #000;
+	
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+#container {
+	width:700px;
+	height: 700px;
+	left:50%;
+	top:50%;
+	position:absolute;
+	-ms-transform: translateX(-50%) translateY(-50%);
+  	-webkit-transform: translate(-50%,-50%);
+  	transform: translate(-50%,-50%);
+}
+
+/* 4 color sides */
+.sides {
+	width: 45%;
+	height: 330px;
+	display: inline-block;
+	margin:10px;
+	cursor: pointer;
+}
+
+#greenSide {
+	background: #3EC158;
+	border-bottom-right-radius: 100%;
+}
+
+#redSide {
+	background: #F32031;
+	border-bottom-left-radius: 100%;
+}
+
+#blueSide {
+	background: #14B7EE;
+	border-top-right-radius: 100%;
+}
+
+#yellowSide{
+	background: #F5D463;
+	border-top-left-radius: 100%;
+}
+
+/* Center div controller styles */
+#center {
+	background: #000;
+    width: 350px;
+    height: 350px;
+    left: 48%;
+    top: 51%;
+	position:absolute;
+	-ms-transform: translateX(-50%) translateY(-50%);
+  	-webkit-transform: translate(-50%,-50%);
+  	transform: translate(-50%,-50%);
+  	border-radius: 100%;
+}
+
+#score {
+	width: 60px;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    top: 200px;
+    left: 60px;
+    position: absolute;
+    background: #FBF0CB;
+    font-family: 'Audiowide', cursive;
+    font-size: 24px;
+    text-align: center;
+}
