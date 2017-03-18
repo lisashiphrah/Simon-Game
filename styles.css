@@ -72,7 +72,7 @@ table {
 	border-bottom-right-radius: 100%;
 }
 
-#greenSide:hover{
+.greenSideGlow{
 	-webkit-animation: neon4 1.5s ease-in-out infinite alternate;
   	-moz-animation: neon4 1.5s ease-in-out infinite alternate;
   	animation: neon4 1.5s ease-in-out infinite alternate;
@@ -83,7 +83,7 @@ table {
 	border-bottom-left-radius: 100%;
 }
 
-#redSide:hover {
+.redSideGlow {
   -webkit-animation: neon1 1.5s ease-in-out infinite alternate;
   -moz-animation: neon1 1.5s ease-in-out infinite alternate;
   animation: neon1 1.5s ease-in-out infinite alternate;
@@ -94,7 +94,7 @@ table {
 	border-top-right-radius: 100%;
 }
 
-#blueSide:hover {
+.blueSideGlow {
 	-webkit-animation: neon2 1.5s ease-in-out infinite alternate;
 	-moz-animation: neon2 1.5s ease-in-out infinite alternate;
 	animation: neon2 1.5s ease-in-out infinite alternate;
@@ -105,7 +105,7 @@ table {
 	border-top-left-radius: 100%;
 }
 
-#yellowSide:hover {
+.yellowSideGlow {
 	-webkit-animation: neon3 1.5s ease-in-out infinite alternate;
   	-moz-animation: neon3 1.5s ease-in-out infinite alternate;
   	animation: neon3 1.5s ease-in-out infinite alternate;
@@ -172,6 +172,28 @@ table {
 
 #restartLabel {
 	left: 95px;
+}
+
+input[type="button"]{
+	border:none;
+	border-radius: 10px;
+	color:#fff;
+	padding:10px;
+	cursor: pointer;
+	font-family: 'Audiowide', cursive;
+	font-size: 24px;
+	width:130px;
+	position: absolute;
+	top: 60px;
+	left: 75px;
+	background: #33d453;
+	text-shadow: 0px 0px 10px #565656;
+}
+
+input[type="button"]:hover{
+	-webkit-animation: neon4 1.5s ease-in-out infinite alternate;
+  	-moz-animation: neon4 1.5s ease-in-out infinite alternate;
+  	animation: neon4 1.5s ease-in-out infinite alternate;
 }
 
 
