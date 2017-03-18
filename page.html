@@ -14,10 +14,10 @@
 			<div id="greenSide" class="sides glow"></div>
 
 			<div id="center">
-				<input type="button" value="start"/>
+				<input type="button" value="start" id="startButton" onclick="startGame()"/>
 				<input type="text" id="score" readonly value="0"/>
-				<div id="strictModeButton"></div>
-				<div id="restartButton"></div>
+				<div id="strictModeButton" onclick="startStrictMode()"></div>
+				<div id="restartButton" onclick="restartGame()"></div>
 				<label id="strictModeLabel">strict</label>
 				<label id="restartLabel">restart</label>
 			</div>

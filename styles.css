@@ -153,6 +153,12 @@ table {
 	left: 190px;
 }
 
+.strictModeOn {
+	-webkit-animation: neon1 1.5s ease-in-out infinite alternate;
+  	-moz-animation: neon1 1.5s ease-in-out infinite alternate;
+  	animation: neon1 1.5s ease-in-out infinite alternate;
+}
+
 #restartButton {
 	background: #14B7EE;
 	left: 110px;
