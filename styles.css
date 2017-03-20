@@ -111,6 +111,10 @@ table {
   	animation: neon3 1.5s ease-in-out infinite alternate;
 }
 
+.sideError {
+	background: #b90000;
+}
+
 /* Center div controller styles */
 #center {
 	background: #000;

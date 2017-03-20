@@ -2,6 +2,17 @@ var mode = '';
 var series = new Array();
 var currentColor = '';
 var mistake = false;
+var playerTurn = false;
+
+$(document).ready(function(){
+
+	$('.sides').click(function(){
+		if(playerTurn) {
+			playerMovement($(this).attr('id'));
+		}
+	});
+
+});
 
 /*
 *	Function responsible for starting the game 
@@ -20,6 +31,7 @@ function startGame() {
 *	Function responsible for generating the next movement
 */
 function generateMovement() {
+	playerTurn = false;
 	var newColor = Math.floor(Math.random() * 3);
 	switch(newColor) {
 		case 0:
@@ -44,22 +56,24 @@ function generateMovement() {
 			break;
 	}
 	series.push(newColor); //add the new color to the list
+	playerTurn = true;
 }
 
 /*
 *	Function responsible for capturing the player movement
 */
-function playerMovement() {
-	
-	// $('.sides').click(function(){
-	// 	var color = $(this).attr('id');
-	// 	if(color.indexOf(newColor) !== -1) {
-	// 		return true;
-	// 	}
-	// 	else {
-	// 		return false;
-	// 	}
-	// });
+function playerMovement(elementID) {
+	if(elementID.indexOf(currentColor) !== -1) {
+		$('#' + elementID).addClass(elementID + 'Glow');
+		setTimeout(function() {$('#' + elementID).removeClass(elementID + 'Glow');},1200);
+		return true;
+	}
+	else {
+		//sideError
+		$('#' + elementID).addClass('sideError');
+		setTimeout(function() {$('#' + elementID).removeClass('sideError');},200);
+		return false;
+	}
 }
 
 /*
