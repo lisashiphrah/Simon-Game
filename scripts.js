@@ -1,10 +1,7 @@
 var mode = '';
 var series = new Array();
-var colors = ['yellow', 'blue', 'red', 'green'];
-
-$(document).ready(function(){
-
-});
+var currentColor = '';
+var mistake = false;
 
 /*
 *	Function responsible for starting the game 
@@ -12,30 +9,57 @@ $(document).ready(function(){
 function startGame() {
 	$('#startButton').hide();
 
-	generateMovement();
+	while(!mistake) {
+		generateMovement();
+		playerMovement();	
+	}
+	
 }
 
+/*
+*	Function responsible for generating the next movement
+*/
 function generateMovement() {
 	var newColor = Math.floor(Math.random() * 3);
-	alert(newColor);
 	switch(newColor) {
 		case 0:
-			setInterval(function() {$('#yellowSide').addClass('yellowSideGlow');},1000);
-			setInterval(function() {$('#yellowSide').removeClass('yellowSideGlow');},1000);
+			currentColor = 'yellow';
+			$('#yellowSide').addClass('yellowSideGlow');
+			setTimeout(function() {$('#yellowSide').removeClass('yellowSideGlow');},1200);
 			break;
 		case 1:
-			setInterval(function() {$('#blueSide').addClass('blueSideGlow');},1000);
-			setInterval(function() {$('#blueSide').removeClass('blueSideGlow');},1000);
+			currentColor = 'blue';
+			$('#blueSide').addClass('blueSideGlow');
+			setTimeout(function() {$('#blueSide').removeClass('blueSideGlow');},1200);
 			break;
 		case 2:
-			setInterval(function() {$('#redSide').addClass('redSideGlow');},1000);
-			setInterval(function() {$('#redSide').removeClass('redSideGlow');},1000);
+			currentColor = 'red';
+			$('#redSide').addClass('redSideGlow');
+			setTimeout(function() {$('#redSide').removeClass('redSideGlow');},1200);
 			break;
 		case 3:
-			setInterval(function() {$('#greenSide').addClass('greenSideGlow');},1000);
-			setInterval(function() {$('#greenSide').removeClass('greenSideGlow');},1000);
+			currentColor = 'green';
+			$('#greenSide').addClass('greenSideGlow');
+			setTimeout(function() {$('#greenSide').removeClass('greenSideGlow');},1200);
 			break;
 	}
+	series.push(newColor); //add the new color to the list
+}
+
+/*
+*	Function responsible for capturing the player movement
+*/
+function playerMovement() {
+	
+	// $('.sides').click(function(){
+	// 	var color = $(this).attr('id');
+	// 	if(color.indexOf(newColor) !== -1) {
+	// 		return true;
+	// 	}
+	// 	else {
+	// 		return false;
+	// 	}
+	// });
 }
 
 /*
