@@ -112,7 +112,7 @@ table {
 }
 
 .sideError {
-	background: #b90000;
+	background: #b90000!important;
 }
 
 /* Center div controller styles */

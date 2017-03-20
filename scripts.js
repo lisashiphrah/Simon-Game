@@ -9,6 +9,7 @@ $(document).ready(function(){
 	$('.sides').click(function(){
 		if(playerTurn) {
 			playerMovement($(this).attr('id'));
+			setTimeout(function() { generateMovement();},1900);
 		}
 	});
 
@@ -19,44 +20,43 @@ $(document).ready(function(){
 */
 function startGame() {
 	$('#startButton').hide();
-
-	while(!mistake) {
-		generateMovement();
-		playerMovement();	
-	}
-	
+	generateMovement();
 }
 
 /*
 *	Function responsible for generating the next movement
 */
 function generateMovement() {
-	playerTurn = false;
-	var newColor = Math.floor(Math.random() * 3);
-	switch(newColor) {
-		case 0:
-			currentColor = 'yellow';
-			$('#yellowSide').addClass('yellowSideGlow');
-			setTimeout(function() {$('#yellowSide').removeClass('yellowSideGlow');},1200);
-			break;
-		case 1:
-			currentColor = 'blue';
-			$('#blueSide').addClass('blueSideGlow');
-			setTimeout(function() {$('#blueSide').removeClass('blueSideGlow');},1200);
-			break;
-		case 2:
-			currentColor = 'red';
-			$('#redSide').addClass('redSideGlow');
-			setTimeout(function() {$('#redSide').removeClass('redSideGlow');},1200);
-			break;
-		case 3:
-			currentColor = 'green';
-			$('#greenSide').addClass('greenSideGlow');
-			setTimeout(function() {$('#greenSide').removeClass('greenSideGlow');},1200);
-			break;
+
+	if(!mistake)
+	{
+		playerTurn = false;
+		var newColor = Math.floor(Math.random() * 3);
+		switch(newColor) {
+			case 0:
+				currentColor = 'yellow';
+				$('#yellowSide').addClass('yellowSideGlow');
+				setTimeout(function() {$('#yellowSide').removeClass('yellowSideGlow');},1200);
+				break;
+			case 1:
+				currentColor = 'blue';
+				$('#blueSide').addClass('blueSideGlow');
+				setTimeout(function() {$('#blueSide').removeClass('blueSideGlow');},1200);
+				break;
+			case 2:
+				currentColor = 'red';
+				$('#redSide').addClass('redSideGlow');
+				setTimeout(function() {$('#redSide').removeClass('redSideGlow');},1200);
+				break;
+			case 3:
+				currentColor = 'green';
+				$('#greenSide').addClass('greenSideGlow');
+				setTimeout(function() {$('#greenSide').removeClass('greenSideGlow');},1200);
+				break;
+		}
+		series.push(newColor); //add the new color to the list
+		playerTurn = true;
 	}
-	series.push(newColor); //add the new color to the list
-	playerTurn = true;
 }
 
 /*
@@ -71,7 +71,7 @@ function playerMovement(elementID) {
 	else {
 		//sideError
 		$('#' + elementID).addClass('sideError');
-		setTimeout(function() {$('#' + elementID).removeClass('sideError');},200);
+		setTimeout(function() {$('#' + elementID).removeClass('sideError');},500);
 		return false;
 	}
 }
