@@ -15,3 +15,6 @@ The final project required to receive the FreeCodeCamp Front End Development Cer
 8. User Story: If I want to restart, I can hit a button to do so, and the game will return to a single step.
 9. User Story: I can play in strict mode where if I get a button press wrong, it notifies me that I have done so, and the game restarts at a new random series of button presses.
 10. User Story: I can win the game by getting a series of 20 steps correct. I am notified of my victory, then the game starts over.
+
+</br>
+<img src="page.png" />
