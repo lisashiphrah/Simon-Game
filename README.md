@@ -17,4 +17,4 @@ The final project required to receive the FreeCodeCamp Front End Development Cer
 10. User Story: I can win the game by getting a series of 20 steps correct. I am notified of my victory, then the game starts over.
 
 </br>
-<img src="page.png" />
+<img src="capture.png" />
