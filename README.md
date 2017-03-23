@@ -2,7 +2,7 @@
 
 # Build a Simon Game :video_game:
 
-The final project required to receive the FreeCodeCamp Front End Development Certificate :metal:
+The final project required to receive the FreeCodeCamp Front End Development Certificate :metal: [Still under development]
 
 
 1. Objective: Build a CodePen.io app that is functionally similar to this: https://codepen.io/FreeCodeCamp/full/obYBjE.
