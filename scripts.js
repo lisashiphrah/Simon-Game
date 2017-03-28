@@ -27,6 +27,8 @@ function startGame() {
 *	Function responsible for generating the next movement
 */
 function generateMovement() {
+	
+	setTimeout(printSeries, 1200);
 
 	if(!mistake)
 	{
@@ -72,6 +74,7 @@ function playerMovement(elementID) {
 		//sideError
 		$('#' + elementID).addClass('sideError');
 		setTimeout(function() {$('#' + elementID).removeClass('sideError');},500);
+		mistake = true;
 		return false;
 	}
 }
@@ -81,8 +84,8 @@ function playerMovement(elementID) {
 *	the next one.
 */
 function printSeries() {
-	for(int i = 0; i < series.length; i++) {
-		switch(newColor) {
+	for(var i = 0; i < series.length; i++) {
+		switch(series[i]) {
 			case 0:
 				$('#yellowSide').addClass('yellowSideGlow');
 				setTimeout(function() {$('#yellowSide').removeClass('yellowSideGlow');},1200);
