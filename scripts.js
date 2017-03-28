@@ -77,6 +77,33 @@ function playerMovement(elementID) {
 }
 
 /*
+*	Function responsible for printing all the previous movements before generating
+*	the next one.
+*/
+function printSeries() {
+	for(int i = 0; i < series.length; i++) {
+		switch(newColor) {
+			case 0:
+				$('#yellowSide').addClass('yellowSideGlow');
+				setTimeout(function() {$('#yellowSide').removeClass('yellowSideGlow');},1200);
+				break;
+			case 1:
+				$('#blueSide').addClass('blueSideGlow');
+				setTimeout(function() {$('#blueSide').removeClass('blueSideGlow');},1200);
+				break;
+			case 2:
+				$('#redSide').addClass('redSideGlow');
+				setTimeout(function() {$('#redSide').removeClass('redSideGlow');},1200);
+				break;
+			case 3:
+				$('#greenSide').addClass('greenSideGlow');
+				setTimeout(function() {$('#greenSide').removeClass('greenSideGlow');},1200);
+				break;
+		}
+	}
+}
+
+/*
 *	Function responsible for starting the game in strict mode
 */
 function startStrictMode() {
