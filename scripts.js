@@ -12,7 +12,6 @@ $(document).ready(function(){
 			setTimeout(function() { generateMovement();},1900);
 		}
 	});
-
 });
 
 /*
@@ -27,7 +26,7 @@ function startGame() {
 *	Function responsible for generating the next movement
 */
 function generateMovement() {
-	
+
 	setTimeout(printSeries, 1200);
 
 	if(!mistake)
