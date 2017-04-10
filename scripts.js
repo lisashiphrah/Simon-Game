@@ -28,7 +28,7 @@ function startGame() {
 */
 function generateMovement() {
 
-	printSeries();
+	printSeries(); 
 
 	if(!mistake)
 	{
@@ -62,24 +62,6 @@ function generateMovement() {
 }
 
 /*
-*	Function responsible for capturing the player movement
-*/
-function playerMovement(elementID) {
-	if(elementID.indexOf(currentColor) !== -1) {
-		$('#' + elementID).addClass(elementID + 'Glow');
-		setTimeout(function() {$('#' + elementID).removeClass(elementID + 'Glow');},1200);
-		return true;
-	}
-	else {
-		//sideError
-		$('#' + elementID).addClass('sideError');
-		setTimeout(function() {$('#' + elementID).removeClass('sideError');},500);
-		mistake = true;
-		return false;
-	}
-}
-
-/*
 *	Function responsible for printing all the previous movements before generating
 *	the next one.
 */
@@ -107,6 +89,25 @@ function printSeries() {
 }
 
 /*
+*	Function responsible for capturing the player movement
+*/
+function playerMovement(elementID) {
+	if(elementID.indexOf(currentColor) !== -1) {
+		$('#' + elementID).addClass(elementID + 'Glow');
+		setTimeout(function() {$('#' + elementID).removeClass(elementID + 'Glow');},1200);
+		return true;
+	}
+	else {
+		//sideError
+		$('#' + elementID).addClass('sideError');
+		setTimeout(function() {$('#' + elementID).removeClass('sideError');},500);
+		mistake = true;
+		return false;
+	}
+}
+
+
+/*
 *	Function responsible for starting the game in strict mode
 */
 function startStrictMode() {
@@ -125,12 +126,4 @@ function startStrictMode() {
 */
 function restartGame() {
 	$('#startButton').show();
-}
-
-/**
-* Delay for a number of milliseconds
-*/
-function sleep(delay) {
-	var start = new Date().getTime();
-	while (new Date().getTime() < start + delay);
 }
