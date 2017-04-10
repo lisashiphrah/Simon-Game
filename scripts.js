@@ -12,6 +12,7 @@ $(document).ready(function(){
 			setTimeout(function() { generateMovement();},1900);
 		}
 	});
+
 });
 
 /*
@@ -27,7 +28,7 @@ function startGame() {
 */
 function generateMovement() {
 
-	setTimeout(printSeries, 1200);
+	printSeries();
 
 	if(!mistake)
 	{
@@ -124,4 +125,12 @@ function startStrictMode() {
 */
 function restartGame() {
 	$('#startButton').show();
+}
+
+/**
+* Delay for a number of milliseconds
+*/
+function sleep(delay) {
+	var start = new Date().getTime();
+	while (new Date().getTime() < start + delay);
 }
