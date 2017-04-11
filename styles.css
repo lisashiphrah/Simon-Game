@@ -67,48 +67,48 @@ table {
 	transition: all 0.5s;
 }
 
-#greenSide {
+#green {
 	background: #3EC158;
 	border-bottom-right-radius: 100%;
 }
 
-.greenSideGlow{
-	-webkit-animation: neon4 1.5s ease-in-out infinite alternate;
-  	-moz-animation: neon4 1.5s ease-in-out infinite alternate;
-  	animation: neon4 1.5s ease-in-out infinite alternate;
+.greenGlow{
+	-webkit-animation: neon4 0.6s ease-in-out infinite alternate;
+  	-moz-animation: neon4 0.6s ease-in-out infinite alternate;
+  	animation: neon4 0.6s ease-in-out infinite alternate;
 }
 
-#redSide {
+#red {
 	background: #F32031;
 	border-bottom-left-radius: 100%;
 }
 
-.redSideGlow {
-  -webkit-animation: neon1 1.5s ease-in-out infinite alternate;
-  -moz-animation: neon1 1.5s ease-in-out infinite alternate;
-  animation: neon1 1.5s ease-in-out infinite alternate;
+.redGlow {
+  -webkit-animation: neon1 0.6s ease-in-out infinite alternate;
+  -moz-animation: neon1 0.6s ease-in-out infinite alternate;
+  animation: neon1 0.6s ease-in-out infinite alternate;
 }
 
-#blueSide {
+#blue {
 	background: #14B7EE;
 	border-top-right-radius: 100%;
 }
 
-.blueSideGlow {
-	-webkit-animation: neon2 1.5s ease-in-out infinite alternate;
-	-moz-animation: neon2 1.5s ease-in-out infinite alternate;
-	animation: neon2 1.5s ease-in-out infinite alternate;
+.blueGlow {
+	-webkit-animation: neon2 0.6s ease-in-out infinite alternate;
+	-moz-animation: neon2 0.6s ease-in-out infinite alternate;
+	animation: neon2 0.6s ease-in-out infinite alternate;
 }
 
-#yellowSide{
+#yellow{
 	background: #F5D463;
 	border-top-left-radius: 100%;
 }
 
-.yellowSideGlow {
-	-webkit-animation: neon3 1.5s ease-in-out infinite alternate;
-  	-moz-animation: neon3 1.5s ease-in-out infinite alternate;
-  	animation: neon3 1.5s ease-in-out infinite alternate;
+.yellowGlow {
+	-webkit-animation: neon3 0.6s ease-in-out infinite alternate;
+  	-moz-animation: neon3 0.6s ease-in-out infinite alternate;
+  	animation: neon3 0.6s ease-in-out infinite alternate;
 }
 
 .sideError {
@@ -118,29 +118,29 @@ table {
 /* Center div controller styles */
 #center {
 	background: #000;
-    width: 270px;
-    height: 270px;
-    left: 48%;
-    top: 51%;
+  width: 270px;
+  height: 270px;
+  left: 48%;
+  top: 51%;
 	position:absolute;
 	-ms-transform: translateX(-50%) translateY(-50%);
-  	-webkit-transform: translate(-50%,-50%);
-  	transform: translate(-50%,-50%);
-  	border-radius: 100%;
+	-webkit-transform: translate(-50%,-50%);
+	transform: translate(-50%,-50%);
+	border-radius: 100%;
 }
 
 #score {
 	width: 50px;
-    padding: 5px;
-    border-radius: 10px;
-    border: none;
-    top: 160px;
-    left: 35px;
-    position: absolute;
-    background: #FBF0CB;
-    font-family: 'Audiowide', cursive;
-    font-size: 24px;
-    text-align: center;
+  padding: 5px;
+  border-radius: 10px;
+  border: none;
+  top: 160px;
+  left: 35px;
+  position: absolute;
+  background: #FBF0CB;
+  font-family: 'Audiowide', cursive;
+  font-size: 24px;
+  text-align: center;
 }
 
 #strictModeButton, #restartButton {
@@ -148,8 +148,8 @@ table {
 	height:30px;
 	position: absolute;
 	top: 160px;
-    border-radius: 100%;
-    cursor: pointer;
+  border-radius: 100%;
+  cursor: pointer;
 }
 
 #strictModeButton {
@@ -159,8 +159,8 @@ table {
 
 .strictModeOn {
 	-webkit-animation: neon1 1.5s ease-in-out infinite alternate;
-  	-moz-animation: neon1 1.5s ease-in-out infinite alternate;
-  	animation: neon1 1.5s ease-in-out infinite alternate;
+	-moz-animation: neon1 1.5s ease-in-out infinite alternate;
+	animation: neon1 1.5s ease-in-out infinite alternate;
 }
 
 #restartButton {
@@ -170,10 +170,10 @@ table {
 
 #strictModeLabel, #restartLabel {
 	color: #FBF0CB;
-    font-family: 'Audiowide', cursive;
-    position: absolute;
-    font-size: 16px;
-    top: 200px;
+  font-family: 'Audiowide', cursive;
+  position: absolute;
+  font-size: 16px;
+  top: 200px;
 }
 
 #strictModeLabel {
@@ -201,9 +201,9 @@ input[type="button"]{
 }
 
 input[type="button"]:hover{
-	-webkit-animation: neon4 1.5s ease-in-out infinite alternate;
-  	-moz-animation: neon4 1.5s ease-in-out infinite alternate;
-  	animation: neon4 1.5s ease-in-out infinite alternate;
+	-webkit-animation: neon4 1.0s ease-in-out infinite alternate;
+	-moz-animation: neon4 1.0s ease-in-out infinite alternate;
+	animation: neon4 1.0s ease-in-out infinite alternate;
 }
 
 
@@ -245,24 +245,6 @@ input[type="button"]:hover{
   }
 }
 
-@-webkit-keyframes neon5 {
-  from {
-    box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FF9900, 0 0 70px #FF9900, 0 0 80px #FF9900, 0 0 100px #FF9900, 0 0 150px #FF9900;
-  }
-  to {
-    box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF9900, 0 0 35px #FF9900, 0 0 40px #FF9900, 0 0 50px #FF9900, 0 0 75px #FF9900;
-  }
-}
-
-@-webkit-keyframes neon6 {
-  from {
-    box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff00de, 0 0 70px #ff00de, 0 0 80px #ff00de, 0 0 100px #ff00de, 0 0 150px #ff00de;
-  }
-  to {
-    box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff00de, 0 0 35px #ff00de, 0 0 40px #ff00de, 0 0 50px #ff00de, 0 0 75px #ff00de;
-  }
-}
-
 /*glow for mozilla*/
 
 @-moz-keyframes neon1 {
@@ -301,23 +283,6 @@ input[type="button"]:hover{
   }
 }
 
-@-moz-keyframes neon5 {
-  from {
-    box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FF9900, 0 0 70px #FF9900, 0 0 80px #FF9900, 0 0 100px #FF9900, 0 0 150px #FF9900;
-  }
-  to {
-    box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF9900, 0 0 35px #FF9900, 0 0 40px #FF9900, 0 0 50px #FF9900, 0 0 75px #FF9900;
-  }
-}
-
-@-moz-keyframes neon6 {
-  from {
-    box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff00de, 0 0 70px #ff00de, 0 0 80px #ff00de, 0 0 100px #ff00de, 0 0 150px #ff00de;
-  }
-  to {
-    box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff00de, 0 0 35px #ff00de, 0 0 40px #ff00de, 0 0 50px #ff00de, 0 0 75px #ff00de;
-  }
-}
 /*glow*/
 
 @keyframes neon1 {
@@ -356,23 +321,7 @@ input[type="button"]:hover{
   }
 }
 
-@keyframes neon5 {
-  from {
-    box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FF9900, 0 0 70px #FF9900, 0 0 80px #FF9900, 0 0 100px #FF9900, 0 0 150px #FF9900;
-  }
-  to {
-    box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF9900, 0 0 35px #FF9900, 0 0 40px #FF9900, 0 0 50px #FF9900, 0 0 75px #FF9900;
-  }
-}
 
-@keyframes neon6 {
-  from {
-    box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff00de, 0 0 70px #ff00de, 0 0 80px #ff00de, 0 0 100px #ff00de, 0 0 150px #ff00de;
-  }
-  to {
-    box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff00de, 0 0 35px #ff00de, 0 0 40px #ff00de, 0 0 50px #ff00de, 0 0 75px #ff00de;
-  }
-}
 
 
 
