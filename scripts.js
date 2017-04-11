@@ -68,7 +68,7 @@ function turnOffLights() {
 // Game start function:
 function startGame() {
 	cleansCounters();
-	$('startButton').hide();
+	$('#startButton').hide();
 	$('#score').val('1');
 	machineMovement();
 }
