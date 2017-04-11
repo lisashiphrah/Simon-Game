@@ -223,7 +223,7 @@ function userMovement() {
 }
 
 // Repeat function for subsequent game rounds:
-function repeat() {
+function printSequence() {
 
 	if ( machinePlay[n] === 1 ) {
 		greenLight();
@@ -256,7 +256,7 @@ function check() {
 		turnOffLights();
 
 		if ( n !== machinePlay.length ) {
-			repeat();
+			printSequence();
 		}
 		else if ( n === machinePlay.length ) {
 			userPlay = [];
@@ -281,7 +281,7 @@ function checkRepeat() {
 		turnOffLights();
 
 		if ( n !== machinePlay.length ) {
-			repeat();
+			printSequence();
 		}
 		else if ( n === machinePlay.length ) {
 
