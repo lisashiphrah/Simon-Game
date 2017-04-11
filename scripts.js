@@ -1,5 +1,7 @@
 var machinePlay = [];
 var userPlay = [];
+var z = -1;
+var w = -1;
 var rand = 1;
 var count = 0;
 var counter = 0;
@@ -78,9 +80,6 @@ function restartGame(){
 	$('#startButton').show();
 	$('#score').val('0');
 }
-
-var z = -1;
-var w = -1;
 
 // Input switches control On/Off State and Strict Mode:
 $('#switchRight').change(function(){
