@@ -73,6 +73,12 @@ function startGame() {
 	machineMovement();
 }
 
+
+function restartGame(){
+	$('#startButton').show();
+	$('#score').val('0');
+}
+
 var z = -1;
 var w = -1;
 
