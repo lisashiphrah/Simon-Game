@@ -1,4 +1,8 @@
-var machinePlay = [];
+
+/**
+ * Global variables
+ */
+ var machinePlay = [];
 var userPlay = [];
 var z = -1;
 var w = -1;
@@ -8,55 +12,31 @@ var counter = 0;
 var userCount = 0;
 var n = 0;
 
+/**
+ * Sounds files
+ */
 var yellowAudio = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound3.mp3');
 var blueAudio = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound4.mp3');
 var redAudio = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound2.mp3');
 var greenAudio = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound1.mp3');
 
-function yellowClick() {
-	yellowLight();
-	userPlay.push(3);
-	userMovement();	
+
+/**
+ * Function called when user pressed the START button
+ */
+function startGame() {
+	cleansCounters();
+	$('#startButton').hide();
+	$('#score').val('1');
+	machineMovement();
 }
 
-function blueClick() {
-	blueLight();
-	userPlay.push(4);
-	userMovement();	
-}
-
-function redClick() {
-	redLight();
-	userPlay.push(2);
-	userMovement();	
-}
-
-function greenClick(){
-	greenLight();
-	userPlay.push(1);
-	userMovement();
-}
-
-// Functions for each button:
-function greenLight() {
-	turnOffLights();
-	$('#green').toggleClass("greenGlow");
-	greenAudio.play();
-}
-function redLight() {
-	turnOffLights()
-	$('#red').toggleClass("redGlow");
-	redAudio.play();
-}
-function yellowLight() {
-	turnOffLights()	
-	$('#yellow').toggleClass("yellowGlow");
-	yellowAudio.play();
-}
-function blueLight() {
-	turnOffLights()
-	$('#blue').toggleClass("blueGlow");
-	blueAudio.play();
+/**
+ * Function called when user pressed the RESTART button
+ */
+function restartGame(){
+	$('#startButton').show();
+	$('#score').val('0');
 }
 
 // Reset function for all buttons:
@@ -65,20 +45,6 @@ function turnOffLights() {
 	$("#red").removeClass("redGlow");
 	$("#yellow").removeClass("yellowGlow");
 	$("#blue").removeClass("blueGlow");			
-}
-
-// Game start function:
-function startGame() {
-	cleansCounters();
-	$('#startButton').hide();
-	$('#score').val('1');
-	machineMovement();
-}
-
-
-function restartGame(){
-	$('#startButton').show();
-	$('#score').val('0');
 }
 
 // Input switches control On/Off State and Strict Mode:
@@ -116,69 +82,70 @@ $('#switchLeft').change(function(){
 		$("#red").removeClass("redWinner");
 		$("#yellow").removeClass("yellowWinner");
 		$("#blue").removeClass("blueWinner");
-
 	}
 
 });
 
-// Computer plays function:
+/**
+ * Function called when AI makes a movement
+ */
 function machineMovement() {
 	var x = 1;
 	function clear() {
 		clearInterval(machineMovement);
 	}
 
-	if ( count > 0 ) {
+	if (count > 0) {
 		x = 0;
 	}
-
 	var machineMovement = setInterval(function() {
+		turnOffLights();
+		generateRandomPlay();
+		
+		if (rand === 1) {
+			greenLight();
+		}
+		else if (rand === 2) {
+			redLight();
+		}
+		else if (rand === 3) {
+			yellowLight();	
+		}
+		else if (rand === 4) {
+			blueLight();		
+		}
 
-			turnOffLights();
-			generateRandomPlay();
-			
-			if (rand === 1) {
-				greenLight();
-			}
-			else if (rand === 2) {
-				redLight();
-			}
-			else if (rand === 3) {
-				yellowLight();	
-			}
-			else if (rand === 4) {
-				blueLight();		
-			}
+		count++;
 
-			count++;
-
-			// Resets buttons after machine plays final round, so the user can continue:
-			if (count === counter + 1) {
-				clear();
-				setTimeout(function() {
-					turnOffLights();
-				}, 500);
-			}
+		// Resets buttons after machine plays final round, so the user can continue:
+		if (count === counter + 1) {
+			clear();
+			setTimeout(function() {
+				turnOffLights();
+			}, 500);
+		}
 
 	}, 750 * x); // Pause between iterations of button press functions
 
 };
 
-// Generate a random number between 1 and 4 for each round:
+/**
+ * Generate a random number between 1 and 4 for each round:
+ */
 function generateRandomPlay() {
 	rand = Math.floor((Math.random() * 4) + 1);
 	machinePlay.push(rand);
 	return rand;
 }
 
-// Parse user input:
+/**
+ * Function called when user makes a movement
+ */
 function userMovement() {
 
-	// Game ends function:
 	if(!hasAWinner()){
-		// User correctly completed a round:
-		if ( userPlay.length === machinePlay.length 
-			&& userPlay[userCount] === machinePlay[userCount] ) {
+		// User correctly completed the game
+		if (userPlay.length === machinePlay.length && userPlay[userCount] === machinePlay[userCount]) {
 			userPlay = [];
 			userCount = 0;
 
@@ -191,7 +158,7 @@ function userMovement() {
 		}
 
 		// User correctly identifies next element in series:
-		else if ( userPlay[userCount] === machinePlay[userCount] ) {
+		else if (userPlay[userCount] === machinePlay[userCount] ) {
 			userCount++;
 			setTimeout(function() {
 				turnOffLights();
@@ -220,25 +187,26 @@ function userMovement() {
 			setTimeout(function() {
 				cleanLostGame();
 				checkRepeat();
-
 			}, 750);
-
 		}
 	}
 }
 
-// Repeat function for subsequent game rounds:
+
+/**
+ * Prints the sequence generated until the moment
+ */
 function printSequence() {
 
-	if ( machinePlay[n] === 1 ) {
+	if (machinePlay[n] === 1 ) {
 		greenLight();
 		n++;
 	}
-	else if ( machinePlay[n] === 2) {
+	else if (machinePlay[n] === 2) {
 		redLight();
 		n++;
 	}
-	else if ( machinePlay[n] === 3) {
+	else if (machinePlay[n] === 3) {
 		yellowLight();
 		n++;
 	}
@@ -246,10 +214,11 @@ function printSequence() {
 		blueLight();
 		n++;
 	}	
-
 }
 
-// Check if the computer has iterated to the current round:
+/**
+ * Check if the computer has iterated to the current round:
+ */
 function check() {
 
 	function clear() {
@@ -275,7 +244,9 @@ function check() {
 
 }
 
-// Check function for when the user fails a round (normal mode):
+/**
+ * Check function for when the user fails a round (normal mode):
+ */
 function checkRepeat() {
 
 	function clear() {
@@ -294,13 +265,13 @@ function checkRepeat() {
 			userCount = 0;
 			n = 0;
 			clear();
-
 		}
-
 	}, 750);
-
 }
 
+/**
+ * Adds classes and styles to the game when user loses
+ */
 function losesGame() {
 	$("#green").addClass("greenLoser");
 	$("#red").addClass("redLoser");
@@ -308,6 +279,9 @@ function losesGame() {
 	$("#blue").addClass("blueLoser");
 }
 
+/**
+ * Cleans classes added when user lost the game
+ */
 function cleanLostGame() {
 	$("#green").removeClass("greenLoser");
 	$("#red").removeClass("redLoser");
@@ -317,8 +291,12 @@ function cleanLostGame() {
 	increaseScore();	
 }
 
+/**
+ * Function responsible for verifying if there's a winner
+ * @return true if there is a winner
+ */
 function hasAWinner() {
-	if ( userPlay[userCount] === machinePlay[userCount] 
+	if (userPlay[userCount] === machinePlay[userCount] 
 		&& machinePlay.length === 20 
 		&& userPlay.length === machinePlay.length) {
 
@@ -334,6 +312,9 @@ function hasAWinner() {
 	return false;
 }
 
+/**
+ * Cleans global variables and counter
+ */
 function cleansCounters() {
 	n = 0;
 	machinePlay = [];
@@ -343,7 +324,86 @@ function cleansCounters() {
 	userCount = 0;
 }
 
+/**
+ * Function responsible for increasing the score
+ */
 function increaseScore() {
 	var score = parseInt($('#score').val()) + 1;
 	$('#score').val(score);	
+}
+
+//////////////////// YELLOW BUTTON EVENTS //////////////////////
+/**
+ * Function when Yellow button is pressed
+ */
+function yellowClick() {
+	yellowLight();
+	userPlay.push(3);
+	userMovement();	
+}
+/**
+ * Turns on yellow lights and play sound
+ */
+function yellowLight() {
+	turnOffLights()	
+	$('#yellow').toggleClass("yellowGlow");
+	yellowAudio.play();
+}
+
+
+//////////////////// BLUE BUTTON EVENTS //////////////////////
+
+/**
+ * Function when Blue button is pressed
+ */
+function blueClick() {
+	blueLight();
+	userPlay.push(4);
+	userMovement();	
+}
+/**
+ * Turns on blue lights and play sound
+ */
+function blueLight() {
+	turnOffLights()
+	$('#blue').toggleClass("blueGlow");
+	blueAudio.play();
+}
+
+//////////////////// RED BUTTON EVENTS //////////////////////
+
+/**
+ * Function when Red button is pressed
+ */
+function redClick() {
+	redLight();
+	userPlay.push(2);
+	userMovement();	
+}
+/**
+ * Turns on red lights and play sound
+ */
+function redLight() {
+	turnOffLights()
+	$('#red').toggleClass("redGlow");
+	redAudio.play();
+}
+
+
+//////////////////// GREEN BUTTON EVENTS //////////////////////
+/**
+ * Function when Green button is pressed
+ */
+function greenClick(){
+	greenLight();
+	userPlay.push(1);
+	userMovement();
+}
+/**
+ * Turns on green lights and play sound
+ */
+function greenLight() {
+	turnOffLights();
+	$('#green').toggleClass("greenGlow");
+	greenAudio.play();
 }
