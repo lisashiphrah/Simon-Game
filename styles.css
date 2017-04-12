@@ -58,7 +58,7 @@ table {
 /* 4 color sides */
 .sides {
 	width: 45%;
-	height: 230px;
+	height: 225px;
 	display: inline-block;
 	margin:10px;
 	cursor: pointer;
