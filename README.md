@@ -2,6 +2,10 @@
 
 # Build a Simon Game :video_game:
 
+<a href="https://codeclimate.com/github/lisashiphrah/Simon-Game"><img src="https://codeclimate.com/github/lisashiphrah/Simon-Game/badges/gpa.svg" /></a>
+
+<a href="https://codeclimate.com/github/lisashiphrah/Simon-Game"><img src="https://codeclimate.com/github/lisashiphrah/Simon-Game/badges/issue_count.svg" /></a>
+
 The final project required to receive the FreeCodeCamp Front End Development Certificate :metal: [Still under development]
 
 
