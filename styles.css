@@ -51,8 +51,9 @@ table {
 	top:50%;
 	position:absolute;
 	-ms-transform: translateX(-50%) translateY(-50%);
-  	-webkit-transform: translate(-50%,-50%);
-  	transform: translate(-50%,-50%);
+	-webkit-transform: translate(-50%,-50%);
+  -o-transform: translate(-50%,-50%);
+	transform: translate(-50%,-50%);
 }
 
 /* 4 color sides */
@@ -64,6 +65,7 @@ table {
 	cursor: pointer;
 	-webkit-transition: all 0.5s;
 	-moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
 	transition: all 0.5s;
 }
 
@@ -126,6 +128,7 @@ table {
 	-ms-transform: translateX(-50%) translateY(-50%);
 	-webkit-transform: translate(-50%,-50%);
 	transform: translate(-50%,-50%);
+  -o-transform: translate(-50%,-50%);
 	border-radius: 100%;
 }
 
@@ -197,7 +200,7 @@ input[type="button"]{
 	top: 60px;
 	left: 75px;
 	background: #33d453;
-	text-shadow: 0px 0px 10px #565656;
+	text-shadow: 0 0 10px #565656;
 }
 
 input[type="button"]:hover{
@@ -320,19 +323,3 @@ input[type="button"]:hover{
     box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #B6FF00, 0 0 35px #B6FF00, 0 0 40px #B6FF00, 0 0 50px #B6FF00, 0 0 75px #B6FF00;
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
