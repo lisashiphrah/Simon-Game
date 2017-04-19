@@ -53,6 +53,7 @@ table {
 	-ms-transform: translateX(-50%) translateY(-50%);
 	-webkit-transform: translate(-50%,-50%);
   -o-transform: translate(-50%,-50%);
+  -moz-transform: translate(-50%,-50%);
 	transform: translate(-50%,-50%);
 }
 
@@ -127,8 +128,9 @@ table {
 	position:absolute;
 	-ms-transform: translateX(-50%) translateY(-50%);
 	-webkit-transform: translate(-50%,-50%);
-	transform: translate(-50%,-50%);
   -o-transform: translate(-50%,-50%);
+  -moz-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
 	border-radius: 100%;
 }
 
