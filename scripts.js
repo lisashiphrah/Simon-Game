@@ -127,7 +127,7 @@ function machineMovement() {
 
 	}, 750 * x); // Pause between iterations of button press functions
 
-};
+}
 
 /**
  * Generate a random number between 1 and 4 for each round:
@@ -328,7 +328,7 @@ function cleansCounters() {
  * Function responsible for increasing the score
  */
 function increaseScore() {
-	var score = parseInt($('#score').val()) + 1;
+	var score = parseInt($('#score').val(), 10) + 1;
 	$('#score').val(score);	
 }
 
