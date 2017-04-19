@@ -73,10 +73,7 @@ $('#switchLeft').change(function(){
 
 		$("#startButton").css("color", "rgb(200,200,200");
 
-		$("#green").removeClass("greenLoser");
-		$("#red").removeClass("redLoser");
-		$("#yellow").removeClass("yellowLoser");
-		$("#blue").removeClass("blueLoser");
+		cleanLostGame();
 
 		$("#green").removeClass("greenWinner");
 		$("#red").removeClass("redWinner");
@@ -177,6 +174,7 @@ function userMovement() {
 			// This is the restart function for strict mode:
 			setTimeout(function() {
 				cleanLostGame();
+				increaseScore();	
 				machineMovement();
 			}, 1750);
 		}
@@ -186,6 +184,7 @@ function userMovement() {
 			losesGame();
 			setTimeout(function() {
 				cleanLostGame();
+				increaseScore();	
 				checkRepeat();
 			}, 750);
 		}
@@ -287,8 +286,13 @@ function cleanLostGame() {
 	$("#red").removeClass("redLoser");
 	$("#yellow").removeClass("yellowLoser");
 	$("#blue").removeClass("blueLoser");
+}
 
-	increaseScore();	
+function addWinner() {
+	$("#green").addClass("greenWinner");
+	$("#red").addClass("redWinner");
+	$("#yellow").addClass("yellowWinner");
+	$("#blue").addClass("blueWinner");
 }
 
 /**
@@ -300,10 +304,7 @@ function hasAWinner() {
 		&& machinePlay.length === 20 
 		&& userPlay.length === machinePlay.length) {
 
-		$("#green").addClass("greenWinner");
-		$("#red").addClass("redWinner");
-		$("#yellow").addClass("yellowWinner");
-		$("#blue").addClass("blueWinner");
+		addWinner();
 
 		$('#score').val('1');
 
