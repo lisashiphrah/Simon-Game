@@ -13,7 +13,7 @@ var userCount = 0;
 var n = 0;
 
 /**
- * Sounds files
+ * Sounds files 
  */
 var yellowAudio = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound3.mp3');
 var blueAudio = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound4.mp3');
