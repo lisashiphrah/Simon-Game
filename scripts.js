@@ -6,14 +6,14 @@
 var userPlay = [];
 var z = -1;
 var w = -1;
-var rand = 1; 
+var rand = 1;
 var count = 0;
 var counter = 0;
 var userCount = 0;
 var n = 0;
 
 /**
- * Sounds files 
+ * Sounds files
  */
 var yellowAudio = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound3.mp3');
 var blueAudio = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound4.mp3');
@@ -73,7 +73,8 @@ $('#switchLeft').change(function(){
 
 		$("#startButton").css("color", "rgb(200,200,200");
 
-		cleanLostGame();
+		//cleanLostGame();
+		losesGame();
 
 		$("#green").removeClass("greenWinner");
 		$("#red").removeClass("redWinner");
@@ -173,7 +174,8 @@ function userMovement() {
 
 			// This is the restart function for strict mode:
 			setTimeout(function() {
-				cleanLostGame();
+				//cleanLostGame();
+				losesGame();
 				increaseScore();	
 				machineMovement();
 			}, 1750);
@@ -183,7 +185,8 @@ function userMovement() {
 			n = 0;
 			losesGame();
 			setTimeout(function() {
-				cleanLostGame();
+				//cleanLostGame();
+				losesGame();
 				increaseScore();	
 				checkRepeat();
 			}, 750);
@@ -272,10 +275,10 @@ function checkRepeat() {
  * Adds classes and styles to the game when user loses
  */
 function losesGame() {
-	$("#green").addClass("greenLoser");
-	$("#red").addClass("redLoser");
-	$("#yellow").addClass("yellowLoser");
-	$("#blue").addClass("blueLoser");
+	$("#green").toggleClass("greenLoser");
+	$("#red").toggleClass("redLoser");
+	$("#yellow").toggleClass("yellowLoser");
+	$("#blue").toggleClass("blueLoser");
 }
 
 /**
