@@ -283,13 +283,14 @@ function losesGame() {
 
 /**
  * Cleans classes added when user lost the game
- */
+ 
 function cleanLostGame() {
 	$("#green").removeClass("greenLoser");
 	$("#red").removeClass("redLoser");
 	$("#yellow").removeClass("yellowLoser");
 	$("#blue").removeClass("blueLoser");
 }
+*/
 
 function addWinner() {
 	$("#green").addClass("greenWinner");
